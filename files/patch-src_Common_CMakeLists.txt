@@ -1,0 +1,11 @@
+--- src/Common/CMakeLists.txt.orig	2025-07-02 14:00:12 UTC
++++ src/Common/CMakeLists.txt
+@@ -46,7 +46,7 @@ endif()
+ )
+ endif()
+ 
+-if(UNIX AND NOT APPLE)
++if(LINUX)
+ 	target_sources(CemuCommon PRIVATE
+ 		ExceptionHandler/ELFSymbolTable.cpp
+ 		ExceptionHandler/ELFSymbolTable.h
