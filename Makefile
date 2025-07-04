@@ -63,7 +63,7 @@ OPTIONS_DEFAULT=	WAYLAND
 WAYLAND_DESC=		Build with Wayland support
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
-WAYLAND_RUN_DEPENDS=	wayland>0:graphics/wayland
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/bin/Cemu_release ${STAGEDIR}${PREFIX}/bin
