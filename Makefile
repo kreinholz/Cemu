@@ -119,11 +119,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/zh
 	${INSTALL_DATA} ${WRKSRC}/bin/resources/zh/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/zh
 
-post-extract-WAYLAND-on:
-	@${MKDIR} ${WRKDIR}/.build
-	${CP} ${LOCALBASE}/include/wayland-util.h ${WRKDIR}/.build
-	${CP} ${LOCALBASE}/include/wayland-client.h ${WRKDIR}/.build
-
 post-install:
 .if exists(/usr/bin/elfctl)
 	${ELFCTL} -e +wxneeded ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
