@@ -27,7 +27,7 @@ LIB_DEPENDS=	libpugixml.so:textproc/pugixml \
 		libboost_program_options.so:devel/boost-libs
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
-		libtool perl5 pkgconfig sdl xorg
+		libtool perl5 pkgconfig sdl ssl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cemu-project
@@ -49,14 +49,21 @@ CMAKE_ARGS+=	-DENABLE_BLUEZ:BOOL=OFF \
 		-DENABLE_DISCORD_RPC:BOOL=OFF \
 		-DENABLE_FERALGAMEMODE:BOOL=OFF \
 		-DENABLE_HIDAPI:BOOL=OFF \
-		-DENABLE_VCPKG:BOOL=OFF \
-		-DENABLE_WAYLAND:BOOL=OFF
+		-DENABLE_VCPKG:BOOL=OFF
 
 MAKE_ENV+=	DESTDIR="${STAGEDIR}"
 
 LDFLAGS+=	-Wl,--as-needed
 
 DEBUG_CMAKE_ON=	wxWidgets_USE_DEBUG
+
+OPTIONS_DEFINE=		WAYLAND
+OPTIONS_DEFAULT=	WAYLAND
+
+WAYLAND_DESC=		Build with Wayland support
+WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
+WAYLAND_RUN_DEPENDS=	wayland>0:graphics/wayland
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/bin/Cemu_release ${STAGEDIR}${PREFIX}/bin
@@ -111,6 +118,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/resources/uk/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/uk
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/zh
 	${INSTALL_DATA} ${WRKSRC}/bin/resources/zh/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/zh
+
+post-extract-WAYLAND-on:
+	@${MKDIR} ${WRKDIR}/.build
+	${CP} ${LOCALBASE}/include/wayland-util.h ${WRKDIR}/.build
+	${CP} ${LOCALBASE}/include/wayland-client.h ${WRKDIR}/.build
 
 post-install:
 .if exists(/usr/bin/elfctl)
