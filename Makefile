@@ -1,5 +1,5 @@
 PORTNAME=	Cemu
-PORTVERSION=	2.6.54.e91740c
+PORTVERSION=	2.6.80be462
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
@@ -30,9 +30,9 @@ USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
 		libtool perl5 pkgconfig sdl ssl xorg
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	cemu-project
-GH_PROJECT=	Cemu
-GH_TAGNAME=	e91740c
+GH_ACCOUNT=	kreinholz
+GH_PROJECT=	Cemu-upstream
+GH_TAGNAME=	80be462
 GH_TUPLE?=	mozilla:cubeb:2071354a69aca7ed6df3b4222e305746c2113f60:cubeb/dependencies/cubeb \
 		arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/dependencies/cubeb/cmake/sanitizers-cmake \
 		Exzap:ZArchive:d2c717730092c7bf8cbb033b12fd4001b7c4d932:ZArchive/dependencies/ZArchive \
