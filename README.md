@@ -11,6 +11,7 @@ To build on FreeBSD (amd64 or aarch64):
 Clone this repository:
 
 git clone git@github.com:kreinholz/Cemu.git
+
 cd Cemu
 
 (Optionally: 'git switch forked' or 'git switch main')
