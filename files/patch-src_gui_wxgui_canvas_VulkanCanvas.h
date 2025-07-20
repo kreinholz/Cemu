@@ -1,6 +1,6 @@
---- src/gui/canvas/VulkanCanvas.h.orig	2025-06-27 17:24:53 UTC
-+++ src/gui/canvas/VulkanCanvas.h
-@@ -9,7 +9,7 @@ class VulkanCanvas : public IRenderCanvas, public wxWi
+--- src/gui/wxgui/canvas/VulkanCanvas.h.orig	2025-07-20 11:44:08.007933000 -0700
++++ src/gui/wxgui/canvas/VulkanCanvas.h	2025-07-19 07:43:31.823052000 -0700
+@@ -9,7 +9,7 @@
  
  class VulkanCanvas : public IRenderCanvas, public wxWindow
  {

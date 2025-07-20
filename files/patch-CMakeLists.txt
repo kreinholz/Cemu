@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-06-22 21:34:41 UTC
-+++ CMakeLists.txt
-@@ -159,7 +159,7 @@ if (UNIX AND NOT APPLE)
+--- CMakeLists.txt.orig	2025-07-20 11:44:07.638749000 -0700
++++ CMakeLists.txt	2025-07-19 19:17:55.654100000 -0700
+@@ -159,7 +159,7 @@
  			BASENAME viewporter)
  		add_library(CemuWaylandProtocols STATIC ${WAYLAND_PROTOCOL_SRCS})
  		target_include_directories(CemuWaylandProtocols PUBLIC "${CMAKE_CURRENT_BINARY_DIR}")
@@ -9,7 +9,7 @@
  		add_compile_definitions(HAS_WAYLAND)
  	endif()
  	find_package(GTK3 REQUIRED)
-@@ -236,4 +236,4 @@ endif()
+@@ -234,4 +234,4 @@
  	add_subdirectory("dependencies/ZArchive" EXCLUDE_FROM_ALL)
  endif()
  

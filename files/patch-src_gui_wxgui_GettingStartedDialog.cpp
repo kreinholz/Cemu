@@ -1,6 +1,6 @@
---- src/gui/GettingStartedDialog.cpp.orig	2025-06-26 23:04:23 UTC
-+++ src/gui/GettingStartedDialog.cpp
-@@ -15,7 +15,7 @@
+--- src/gui/wxgui/GettingStartedDialog.cpp.orig	2025-07-20 11:44:08.006009000 -0700
++++ src/gui/wxgui/GettingStartedDialog.cpp	2025-07-19 07:43:31.818431000 -0700
+@@ -17,7 +17,7 @@
  
  #include "Cafe/TitleList/TitleList.h"
  

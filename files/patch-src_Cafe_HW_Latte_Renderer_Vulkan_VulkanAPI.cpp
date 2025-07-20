@@ -1,5 +1,5 @@
---- src/Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.cpp.orig	2025-06-27 17:29:57 UTC
-+++ src/Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.cpp
+--- src/Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.cpp.orig	2025-07-20 11:44:07.954136000 -0700
++++ src/Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.cpp	2025-07-04 08:25:08.010904000 -0700
 @@ -3,7 +3,7 @@
  #include "Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.h"
  #include <numeric> // for std::iota
@@ -9,7 +9,7 @@
  #include <dlfcn.h>
  #endif
  
-@@ -138,7 +138,7 @@ void* dlopen_vulkan_loader()
+@@ -138,7 +138,7 @@
  
  void* dlopen_vulkan_loader()
  {

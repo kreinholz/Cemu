@@ -1,6 +1,6 @@
---- src/Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.h.orig	2025-06-27 17:45:47 UTC
-+++ src/Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.h
-@@ -130,7 +130,7 @@ VKFUNC_DEVICE(vkCmdBindPipeline);
+--- src/Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.h.orig	2025-07-20 11:44:07.954222000 -0700
++++ src/Cafe/HW/Latte/Renderer/Vulkan/VulkanAPI.h	2025-07-04 08:25:40.587142000 -0700
+@@ -130,7 +130,7 @@
  VKFUNC_DEVICE(vkCmdBindPipeline);
  
  // swapchain

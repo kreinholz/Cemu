@@ -1,6 +1,6 @@
---- src/Cafe/CafeSystem.cpp.orig	2025-06-22 21:34:41 UTC
-+++ src/Cafe/CafeSystem.cpp
-@@ -72,7 +72,7 @@
+--- src/Cafe/CafeSystem.cpp.orig	2025-07-20 11:44:07.924600000 -0700
++++ src/Cafe/CafeSystem.cpp	2025-07-19 07:43:31.795751000 -0700
+@@ -69,7 +69,7 @@
  
  #if BOOST_OS_LINUX
  #include <sys/sysinfo.h>
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #include <sys/sysctl.h>
  #endif
-@@ -478,6 +478,12 @@ namespace CafeSystem
+@@ -475,6 +475,12 @@
  		int result = sysctlbyname("hw.memsize", &totalRam, &size, NULL, 0);
  		if (result == 0)
  			cemuLog_log(LogType::Force, "RAM: {}MB", (totalRam / 1024LL / 1024LL));
@@ -22,7 +22,7 @@
  		#endif
  	}
  
-@@ -526,6 +532,16 @@ namespace CafeSystem
+@@ -523,6 +529,16 @@
  			platform = "Linux";
  		#elif BOOST_OS_MACOS
  		platform = "MacOS";
@@ -30,11 +30,11 @@
 +		#if defined(__FreeBSD__)
 +		platform = "FreeBSD";
 +		#elif defined(__OpenBSD__)
-+		platform = "OpenBSD"
++		platform = "OpenBSD";
 +		#elif defined(__NetBSD__)
-+		platform = "NetBSD"
++		platform = "NetBSD";
 +		#else
-+		platform = "Unknown BSD"
++		platform = "Unknown BSD";
 +		#endif
  		#endif
  		cemuLog_log(LogType::Force, "Platform: {}", platform);

@@ -1,6 +1,6 @@
---- src/gui/components/wxGameList.cpp.orig	2025-06-27 17:16:25 UTC
-+++ src/gui/components/wxGameList.cpp
-@@ -1372,7 +1372,7 @@ void wxGameList::DeleteCachedStrings() 
+--- src/gui/wxgui/components/wxGameList.cpp.orig	2025-07-20 11:44:08.008737000 -0700
++++ src/gui/wxgui/components/wxGameList.cpp	2025-07-19 07:43:31.824955000 -0700
+@@ -1373,7 +1373,7 @@
  	m_name_cache.clear();
  }
  

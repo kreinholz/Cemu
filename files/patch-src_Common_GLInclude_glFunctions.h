@@ -1,6 +1,6 @@
---- src/Common/GLInclude/glFunctions.h.orig	2025-06-27 18:30:14 UTC
-+++ src/Common/GLInclude/glFunctions.h
-@@ -297,7 +297,7 @@ GLFUNC(PFNWGLSWAPINTERVALEXTPROC, wglSwapIntervalEXT)
+--- src/Common/GLInclude/glFunctions.h.orig	2025-07-20 11:44:07.994342000 -0700
++++ src/Common/GLInclude/glFunctions.h	2025-07-04 08:36:21.208941000 -0700
+@@ -297,7 +297,7 @@
  
  // x
  

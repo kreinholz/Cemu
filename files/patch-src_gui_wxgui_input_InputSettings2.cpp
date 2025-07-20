@@ -1,6 +1,6 @@
---- src/gui/input/InputSettings2.cpp.orig	2025-06-27 17:21:44 UTC
-+++ src/gui/input/InputSettings2.cpp
-@@ -149,7 +149,7 @@ wxWindow* InputSettings2::initialize_page(size_t index
+--- src/gui/wxgui/input/InputSettings2.cpp.orig	2025-07-20 11:44:08.011965000 -0700
++++ src/gui/wxgui/input/InputSettings2.cpp	2025-07-19 07:43:31.833153000 -0700
+@@ -149,7 +149,7 @@
  		auto* profiles = new wxComboBox(page, wxID_ANY, kDefaultProfileName);
  		sizer->Add(profiles, wxGBPosition(0, 1), wxDefaultSpan, wxALIGN_CENTER_VERTICAL | wxALL | wxEXPAND, 5);
  

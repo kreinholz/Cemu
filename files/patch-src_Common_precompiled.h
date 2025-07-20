@@ -1,6 +1,6 @@
---- src/Common/precompiled.h.orig	2025-06-22 21:34:41 UTC
-+++ src/Common/precompiled.h
-@@ -143,6 +143,12 @@ inline uint64 _swapEndianU64(uint64 v)
+--- src/Common/precompiled.h.orig	2025-07-20 11:44:07.998697000 -0700
++++ src/Common/precompiled.h	2025-07-19 07:43:31.810152000 -0700
+@@ -184,6 +184,12 @@
  {
  #if BOOST_OS_MACOS
      return OSSwapInt64(v);
@@ -13,7 +13,7 @@
  #else
      return bswap_64(v);
  #endif
-@@ -152,6 +158,12 @@ inline uint32 _swapEndianU32(uint32 v)
+@@ -193,6 +199,12 @@
  {
  #if BOOST_OS_MACOS
      return OSSwapInt32(v);
@@ -26,7 +26,7 @@
  #else
      return bswap_32(v);
  #endif
-@@ -161,6 +173,12 @@ inline sint32 _swapEndianS32(sint32 v)
+@@ -202,6 +214,12 @@
  {
  #if BOOST_OS_MACOS
      return (sint32)OSSwapInt32((uint32)v);
@@ -39,7 +39,7 @@
  #else
      return (sint32)bswap_32((uint32)v);
  #endif
-@@ -452,6 +470,11 @@ bool match_any_of(T1&& value, Types&&... others)
+@@ -493,6 +511,11 @@
  #elif BOOST_OS_MACOS
  	return std::chrono::steady_clock::time_point(
  		std::chrono::nanoseconds(clock_gettime_nsec_np(CLOCK_MONOTONIC_RAW)));

@@ -1,5 +1,5 @@
---- src/Cafe/OS/libs/nsyshid/BackendLibusb.h.orig	2025-06-22 21:34:41 UTC
-+++ src/Cafe/OS/libs/nsyshid/BackendLibusb.h
+--- src/Cafe/OS/libs/nsyshid/BackendLibusb.h.orig	2025-07-20 11:44:07.981986000 -0700
++++ src/Cafe/OS/libs/nsyshid/BackendLibusb.h	2025-07-04 08:32:44.047023000 -0700
 @@ -1,6 +1,10 @@
  #include "nsyshid.h"
  

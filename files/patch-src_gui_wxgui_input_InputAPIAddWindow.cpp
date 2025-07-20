@@ -1,6 +1,6 @@
---- src/gui/input/InputAPIAddWindow.cpp.orig	2025-06-27 17:49:02 UTC
-+++ src/gui/input/InputAPIAddWindow.cpp
-@@ -190,7 +190,7 @@ void InputAPIAddWindow::on_api_selected(wxCommandEvent
+--- src/gui/wxgui/input/InputAPIAddWindow.cpp.orig	2025-07-20 11:44:08.011759000 -0700
++++ src/gui/wxgui/input/InputAPIAddWindow.cpp	2025-07-19 07:43:31.832550000 -0700
+@@ -190,7 +190,7 @@
  	}
      else
      {

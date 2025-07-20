@@ -1,6 +1,6 @@
---- src/Cafe/HW/Latte/Renderer/OpenGL/OpenGLRenderer.cpp.orig	2025-06-27 17:18:46 UTC
-+++ src/Cafe/HW/Latte/Renderer/OpenGL/OpenGLRenderer.cpp
-@@ -210,7 +210,7 @@ void LoadOpenGLImports()
+--- src/Cafe/HW/Latte/Renderer/OpenGL/OpenGLRenderer.cpp.orig	2025-07-20 11:44:07.950865000 -0700
++++ src/Cafe/HW/Latte/Renderer/OpenGL/OpenGLRenderer.cpp	2025-07-19 07:43:31.800275000 -0700
+@@ -241,7 +241,7 @@
  #include "Common/GLInclude/glFunctions.h"
  #undef GLFUNC
  }
@@ -9,7 +9,7 @@
  GL_IMPORT _GetOpenGLFunction(void* hLib, PFNGLXGETPROCADDRESSPROC func, const char* name)
  {
  	GL_IMPORT r = (GL_IMPORT)func((const GLubyte*)name);
-@@ -245,7 +245,7 @@ void LoadOpenGLImports()
+@@ -276,7 +276,7 @@
  #undef EGLFUNC
  }
  

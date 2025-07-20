@@ -1,6 +1,6 @@
---- src/Cafe/HW/MMU/MMU.h.orig	2025-06-22 21:34:41 UTC
-+++ src/Cafe/HW/MMU/MMU.h
-@@ -184,6 +184,16 @@ bool memory_isAddressRangeAccessible(MPTR virtualAddre
+--- src/Cafe/HW/MMU/MMU.h.orig	2025-07-20 11:44:07.957736000 -0700
++++ src/Cafe/HW/MMU/MMU.h	2025-07-04 08:41:56.779889000 -0700
+@@ -184,6 +184,16 @@
  #define CPU_swapEndianU64(_v) OSSwapInt64((uint64)(_v))
  #define CPU_swapEndianU32(_v) OSSwapInt32((uint32)(_v))
  #define CPU_swapEndianU16(_v) OSSwapInt16((uint16)(_v))
@@ -17,7 +17,7 @@
  #endif
  
  // C-style memory access, deprecated. Use memory_read<> and memory_write<> templates instead
-@@ -266,4 +276,4 @@ namespace MMU
+@@ -266,4 +276,4 @@
  
  }
  

@@ -1,6 +1,6 @@
---- src/util/highresolutiontimer/HighResolutionTimer.cpp.orig	2025-06-22 21:34:41 UTC
-+++ src/util/highresolutiontimer/HighResolutionTimer.cpp
-@@ -14,6 +14,11 @@ HighResolutionTimer HighResolutionTimer::now()
+--- src/util/highresolutiontimer/HighResolutionTimer.cpp.orig	2025-07-20 11:44:08.044002000 -0700
++++ src/util/highresolutiontimer/HighResolutionTimer.cpp	2025-07-04 09:03:11.486932000 -0700
+@@ -14,6 +14,11 @@
      return HighResolutionTimer(nsec);
  #elif BOOST_OS_MACOS
  	return HighResolutionTimer(clock_gettime_nsec_np(CLOCK_MONOTONIC_RAW));
@@ -12,7 +12,7 @@
  #endif
  }
  
-@@ -29,6 +34,10 @@ uint64 HighResolutionTimer::m_freq = []() -> uint64 {
+@@ -29,6 +34,10 @@
  	return (uint64)(freq.QuadPart);
  #elif BOOST_OS_MACOS
  	return 1000000000;
