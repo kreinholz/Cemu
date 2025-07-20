@@ -1,5 +1,5 @@
-PORTNAME=	Cemu_Cafe
-PORTVERSION=	2.6.d18ecc0
+PORTNAME=	Cemu
+PORTVERSION=	2.6.3e9be07
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
@@ -32,7 +32,7 @@ USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
 USE_GITHUB=	yes
 GH_ACCOUNT=	kreinholz
 GH_PROJECT=	Cemu-upstream
-GH_TAGNAME=	d18ecc0
+GH_TAGNAME=	3e9be07
 GH_TUPLE?=	mozilla:cubeb:2071354a69aca7ed6df3b4222e305746c2113f60:cubeb/dependencies/cubeb \
 		arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/dependencies/cubeb/cmake/sanitizers-cmake \
 		Exzap:ZArchive:d2c717730092c7bf8cbb033b12fd4001b7c4d932:ZArchive/dependencies/ZArchive \
@@ -67,61 +67,61 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/bin/Cemu_release ${STAGEDIR}${PREFIX}/bin
-	${MV} ${STAGEDIR}${PREFIX}/bin/Cemu_release ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MV} ${STAGEDIR}${PREFIX}/bin/Cemu_release ${STAGEDIR}${PREFIX}/bin/Cemu
 	${INSTALL_KLD} ${WRKSRC}/dist/linux/info.cemu.Cemu.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_KLD} ${WRKSRC}/dist/linux/info.cemu.Cemu.metainfo.xml ${STAGEDIR}${PREFIX}/share/applications
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps
 	${INSTALL_KLD} ${WRKSRC}/dist/linux/info.cemu.Cemu.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/gameProfiles/default
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/gameProfiles/default
 	for f in ${WRKSRC}/bin/gameProfiles/default/*;do \
-		${CP} $${f} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/gameProfiles/default; \
+		${CP} $${f} ${STAGEDIR}${PREFIX}/share/Cemu/gameProfiles/default; \
 	done
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/sharedFonts
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/sharedFonts/*.ttf ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/sharedFonts
-	${INSTALL_DATA} ${WRKSRC}/dist/network_services.xml ${STAGEDIR}${PREFIX}/share/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ar
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/ar/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ar
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ca
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/ca/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ca
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/de
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/de/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/de
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/es
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/es/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/es
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/fr
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/fr/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/fr
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/he
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/he/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/he
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/hu
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/hu/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/hu
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/it
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/it/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/it
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ja
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/ja/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ja
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ko
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/ko/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ko
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/nb
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/nb/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/nb
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/nl
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/nl/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/nl
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/pl
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/pl/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/pl
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/pt
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/pt/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/pt
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ru
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/ru/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/ru
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/sv
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/sv/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/sv
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/tr
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/tr/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/tr
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/uk
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/uk/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/uk
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/zh
-	${INSTALL_DATA} ${WRKSRC}/bin/resources/zh/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/resources/zh
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/sharedFonts
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/sharedFonts/*.ttf ${STAGEDIR}${PREFIX}/share/Cemu/resources/sharedFonts
+	${INSTALL_DATA} ${WRKSRC}/dist/network_services.xml ${STAGEDIR}${PREFIX}/share/Cemu
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/ar
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/ar/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/ar
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/ca
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/ca/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/ca
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/de
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/de/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/de
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/es
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/es/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/es
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/fr
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/fr/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/fr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/he
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/he/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/he
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/hu
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/hu/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/hu
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/it
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/it/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/it
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/ja
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/ja/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/ja
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/ko
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/ko/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/ko
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/nb
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/nb/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/nb
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/nl
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/nl/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/nl
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/pl
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/pl/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/pl
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/pt
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/pt/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/pt
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/ru
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/ru/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/ru
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/sv
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/sv/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/sv
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/tr
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/tr/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/tr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/uk
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/uk/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/uk
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/Cemu/resources/zh
+	${INSTALL_DATA} ${WRKSRC}/bin/resources/zh/* ${STAGEDIR}${PREFIX}/share/Cemu/resources/zh
 
 post-install:
 .if exists(/usr/bin/elfctl)
-	${ELFCTL} -e +wxneeded ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${ELFCTL} -e +wxneeded ${STAGEDIR}${PREFIX}/bin/Cemu
 .endif
 
 .include <bsd.port.mk>
