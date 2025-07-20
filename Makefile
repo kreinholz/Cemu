@@ -1,5 +1,5 @@
-PORTNAME=	Cemu
-PORTVERSION=	2.6.3e9be07
+PORTNAME=	Cemu_Cafe
+PORTVERSION=	2.6.89b409f
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
@@ -32,7 +32,7 @@ USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
 USE_GITHUB=	yes
 GH_ACCOUNT=	kreinholz
 GH_PROJECT=	Cemu-upstream
-GH_TAGNAME=	3e9be07
+GH_TAGNAME=	89b409f
 GH_TUPLE?=	mozilla:cubeb:2071354a69aca7ed6df3b4222e305746c2113f60:cubeb/dependencies/cubeb \
 		arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/dependencies/cubeb/cmake/sanitizers-cmake \
 		Exzap:ZArchive:d2c717730092c7bf8cbb033b12fd4001b7c4d932:ZArchive/dependencies/ZArchive \
@@ -66,7 +66,7 @@ WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 do-install:
-	${INSTALL_KLD} ${WRKSRC}/bin/Cemu_release ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/Cemu_release ${STAGEDIR}${PREFIX}/bin
 	${MV} ${STAGEDIR}${PREFIX}/bin/Cemu_release ${STAGEDIR}${PREFIX}/bin/Cemu
 	${INSTALL_KLD} ${WRKSRC}/dist/linux/info.cemu.Cemu.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_KLD} ${WRKSRC}/dist/linux/info.cemu.Cemu.metainfo.xml ${STAGEDIR}${PREFIX}/share/applications
