@@ -1,6 +1,6 @@
 # FreeBSD port of Cemu - Wii U emulator
 
-This is an unofficial FreeBSD port of Cemu, a Wii U emulator (https://cemu.info). On this branch, I build Cemu against my fork of the upstream Cemu repository, so no patches are necessary to get it to build on FreeBSD.
+This is an unofficial FreeBSD port of Cemu, a Wii U emulator (https://cemu.info). On this branch, I build Cemu against my fork of the upstream Cemu repository. As of commit 4efa40c, the official Cemu sources will build on FreeBSD without patches, so my fork is no longer necessary.
 
 Cemu can be built with or without wayland support. I haven't tested it under wayland, only X11.
 
@@ -20,4 +20,4 @@ sudo make install clean
 
 (Alternatively, run 'make install clean' as root)
 
-Note: the 'forked' branch incorporates my patches into the Cemu sources, matching my pull request to Cemu upstream. The 'main' branch is my original port with patches that apply to upstream Cemu sources at build time.
+Note: the 'forked' branch incorporates my patches into the Cemu sources, matching my pull request to Cemu upstream. Since that pull request was merged into the main Cemu sources on 22 July 2025, this forked branch of my Cemu port remains only for historical purposes and the main branch is the recommended (and more up to date) one.
