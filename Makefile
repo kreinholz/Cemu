@@ -1,5 +1,5 @@
 PORTNAME=	Cemu_Cafe
-PORTVERSION=	2.6.68.c1c2962
+PORTVERSION=	2.6.73.0860959
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
@@ -24,7 +24,11 @@ BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
 LIB_DEPENDS=	libpugixml.so:textproc/pugixml \
 		libcurl.so:ftp/curl \
 		libzip.so:archivers/libzip \
-		libboost_program_options.so:devel/boost-libs
+		libboost_program_options.so:devel/boost-libs \
+		libwx_baseu-3.3.so:x11-toolkits/wx33gtk \
+		libwx_gtk3u_core-3.3.so:x11-toolkits/wxgtk33 \
+		libwx_gtk3u_gl-3.3.so:x11-toolkits/wxgtk33 \
+		libwx_gtk3u_propgrid-3.3.so:x11-toolkits/wxgtk33
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
 		libtool perl5 pkgconfig sdl ssl xorg
@@ -32,7 +36,7 @@ USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
 USE_GITHUB=	yes
 GH_ACCOUNT=	cemu-project
 GH_PROJECT=	Cemu
-GH_TAGNAME=	c1c2962
+GH_TAGNAME=	0860959
 GH_TUPLE?=	mozilla:cubeb:2071354a69aca7ed6df3b4222e305746c2113f60:cubeb/dependencies/cubeb \
 		arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/dependencies/cubeb/cmake/sanitizers-cmake \
 		Exzap:ZArchive:d2c717730092c7bf8cbb033b12fd4001b7c4d932:ZArchive/dependencies/ZArchive \
@@ -42,8 +46,6 @@ USE_GL=		gl glut
 USE_GNOME=	gtk30
 USE_SDL=	sdl2
 USE_XORG=	x11
-USE_WX=		3.2+
-WX_COMPS=	wx
 
 CMAKE_ARGS+=	-DENABLE_BLUEZ:BOOL=OFF \
 		-DENABLE_DISCORD_RPC:BOOL=OFF \

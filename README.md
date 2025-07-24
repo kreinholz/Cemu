@@ -14,10 +14,10 @@ git clone git@github.com:kreinholz/Cemu.git
 
 cd Cemu
 
-(Optionally: 'git switched forked' or 'git switch main')
-
 sudo make install clean
 
 (Alternatively, run 'make install clean' as root)
 
-Note: the 'forked' branch incorporates my patches into the Cemu sources, matching my pull request to Cemu upstream. The 'main' branch is my original port with patches that apply to upstream Cemu sources at build time.
+As of commit 4efa40c, 22 July 2025, the Cemu project merged my patches, so Cemu can now be compiled on FreeBSD without patching the official sources.
+
+As of commit 0860959, 23 July 2025, the Cemu project upgraded the required version of wxWidgets to 3.3.1, so I had to create an unofficial FreeBSD port, x11-toolkits/wxgtk33, in order to supply this dependency. If you want to build my unofficial Cemu port on FreeBSD, please install my unofficial wxgtk33 port first.
