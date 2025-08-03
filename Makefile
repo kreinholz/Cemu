@@ -1,5 +1,5 @@
 PORTNAME=	Cemu_Cafe
-PORTVERSION=	2.6.73.0860959
+PORTVERSION=	2.6.77.57fe7a5
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libpugixml.so:textproc/pugixml \
 		libcurl.so:ftp/curl \
 		libzip.so:archivers/libzip \
 		libboost_program_options.so:devel/boost-libs \
-		libwx_baseu-3.3.so:x11-toolkits/wx33gtk \
+		libwx_baseu-3.3.so:x11-toolkits/wxgtk33 \
 		libwx_gtk3u_core-3.3.so:x11-toolkits/wxgtk33 \
 		libwx_gtk3u_gl-3.3.so:x11-toolkits/wxgtk33 \
 		libwx_gtk3u_propgrid-3.3.so:x11-toolkits/wxgtk33
@@ -36,7 +36,7 @@ USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
 USE_GITHUB=	yes
 GH_ACCOUNT=	cemu-project
 GH_PROJECT=	Cemu
-GH_TAGNAME=	0860959
+GH_TAGNAME=	57fe7a5
 GH_TUPLE?=	mozilla:cubeb:2071354a69aca7ed6df3b4222e305746c2113f60:cubeb/dependencies/cubeb \
 		arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/dependencies/cubeb/cmake/sanitizers-cmake \
 		Exzap:ZArchive:d2c717730092c7bf8cbb033b12fd4001b7c4d932:ZArchive/dependencies/ZArchive \
