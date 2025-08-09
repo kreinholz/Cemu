@@ -1,4 +1,4 @@
-PORTNAME=	Cemu_Cafe
+PORTNAME=	cemu-project
 PORTVERSION=	2.6.77.57fe7a5
 CATEGORIES=	emulators
 
