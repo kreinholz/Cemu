@@ -1,5 +1,5 @@
 PORTNAME=	cemu-project
-PORTVERSION=	2.6.79.aeb3154
+PORTVERSION=	2.6.80.de4bf7c
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
@@ -9,8 +9,8 @@ WWW=		https://cemu.info
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON= Only Espresso Recompiler backends for aarch64, amd64 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON= Espresso Recompiler backends only for aarch64, amd64. Required aarch64 module xbyak_aarch64 doesn't support FreeBSD 
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
 		rapidjson>0:devel/rapidjson \
@@ -36,7 +36,7 @@ USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
 USE_GITHUB=	yes
 GH_ACCOUNT=	cemu-project
 GH_PROJECT=	Cemu
-GH_TAGNAME=	aeb3154
+GH_TAGNAME=	de4bf7c
 GH_TUPLE?=	mozilla:cubeb:2071354a69aca7ed6df3b4222e305746c2113f60:cubeb/dependencies/cubeb \
 		arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/dependencies/cubeb/cmake/sanitizers-cmake \
 		Exzap:ZArchive:d2c717730092c7bf8cbb033b12fd4001b7c4d932:ZArchive/dependencies/ZArchive \
