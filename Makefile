@@ -1,5 +1,5 @@
 PORTNAME=	cemu-project
-PORTVERSION=	2.6.80.9267e72
+PORTVERSION=	2.6.82.g9267e72
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
