@@ -1,5 +1,5 @@
 PORTNAME=	cemu-project
-PORTVERSION=	2.6.106.g0ddcba4
+PORTVERSION=	2.6.115.gaaf6d5d
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
@@ -36,7 +36,7 @@ USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome \
 USE_GITHUB=	yes
 GH_ACCOUNT=	cemu-project
 GH_PROJECT=	Cemu
-GH_TAGNAME=	0ddcba4
+GH_TAGNAME=	aaf6d5d
 GH_TUPLE?=	mozilla:cubeb:2071354a69aca7ed6df3b4222e305746c2113f60:cubeb/dependencies/cubeb \
 		arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/dependencies/cubeb/cmake/sanitizers-cmake \
 		Exzap:ZArchive:d2c717730092c7bf8cbb033b12fd4001b7c4d932:ZArchive/dependencies/ZArchive \
