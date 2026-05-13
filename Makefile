@@ -44,7 +44,7 @@ GH_TUPLE?=	mozilla:cubeb:2071354a69aca7ed6df3b4222e305746c2113f60:cubeb/dependen
 
 USE_GL=		gl glut
 USE_GNOME=	gtk30
-USE_SDL=	sdl2
+USE_SDL=	sdl3
 USE_XORG=	x11
 
 CMAKE_ARGS+=	-DENABLE_BLUEZ:BOOL=OFF \
